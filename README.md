@@ -1,32 +1,36 @@
-# DS4420_project
-4420 project, related to Netflix Rec System
-# Netflix Recommendation System
+# Netflix-Style Movie Recommendation System
 
 ## Project Overview
-This project builds a Netflix-style recommendation system using machine learning methods. Our goal is to predict user preferences for movies based on historical rating data.
+This project builds a Netflix-style movie recommendation system to predict how users would rate movies they have not seen.  
+We train and compare several machine learning models using historical movie rating data.
 
 ## Team Members
-- Yujie Chen, Xinwen Zhang, Zehao Shi
+- Yujie Chen
+- Xinwen Zhang
+- Zehao Shi
 
 ## Dataset
-We use a movie rating dataset from Kaggle for recommendation system analysis.
+We use the **MovieLens movie rating dataset**, a standard benchmark dataset for recommender system research.
 
-## Project Goal
-The main goal of this project is to build a rough proof-of-concept for a non-Bayesian recommendation model.
+The dataset contains:
+- user IDs
+- movie IDs
+- user ratings
 
-## Current Progress
-- Literature review completed
-- GitHub repository created
-- Initial proof-of-concept model in progress
+This allows us to build a **user–movie interaction matrix** for recommendation modeling.
+
+## Models
+We implement and compare three recommendation models:
+
+1. **Matrix Factorization (SVD)**  
+2. **Neural Collaborative Filtering (Neural CF)**  
+3. **Bayesian Probabilistic Matrix Factorization (Bayesian PMF)**
 
 ## Repository Structure
-- `data/` : dataset or sample dataset
-- `notebooks/` : exploratory analysis and model testing
-- `src/` : model code
-- `README.md` : project description
+data/ dataset files
+notebooks/ exploratory analysis and experiments
+src/ model implementations
+README.md project description
 
-## Phase 1 Model
-For Phase 1, we plan to build a baseline recommendation model such as collaborative filtering or a simple rating prediction model.
-
-## Notes
-This repository will be updated in later phases of the project.
+## Phase 1
+For Phase 1, we build a **baseline recommendation model** and perform initial experiments on the MovieLens dataset.
