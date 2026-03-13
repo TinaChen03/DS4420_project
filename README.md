@@ -1,36 +1,46 @@
-# Netflix-Style Movie Recommendation System
+# DS4420 Project Phase I: SVD-Based Matrix Factorization
 
-## Project Overview
-This project builds a Netflix-style movie recommendation system to predict how users would rate movies they have not seen.  
-We train and compare several machine learning models using historical movie rating data.
+## Overview
+This project is a proof-of-concept implementation of a recommendation system using **SVD-based matrix factorization** on the MovieLens 1M dataset. The goal is to predict user ratings for movies based on historical user-item interactions.
 
-## Team Members
-- Yujie Chen
-- Xinwen Zhang
-- Zehao Shi
+For Phase I, this repository focuses on the **first non-Bayesian model**: a manual matrix factorization baseline implemented in **Python + NumPy**.
+
+---
 
 ## Dataset
-We use the **MovieLens movie rating dataset**, a standard benchmark dataset for recommender system research.
+We use the MovieLens 1M-style data files:
 
-The dataset contains:
-- user IDs
-- movie IDs
-- user ratings
+- `ratings.dat`
+- `movies.dat`
+- `users.dat`
 
-This allows us to build a **user–movie interaction matrix** for recommendation modeling.
+The ratings file contains entries in the format:
 
-## Models
-We implement and compare three recommendation models:
+UserID::MovieID::Rating::Timestamp
 
-1. **Matrix Factorization (SVD)**  
-2. **Neural Collaborative Filtering (Neural CF)**  
-3. **Bayesian Probabilistic Matrix Factorization (Bayesian PMF)**
+In our current run:
 
-## Repository Structure
-data/ dataset files
-notebooks/ exploratory analysis and experiments
-src/ model implementations
-README.md project description
+- **Total ratings:** 1,000,209
+- **Total users:** 6,040
+- **Total items:** 3,706
 
-## Phase 1
-For Phase 1, we build a **baseline recommendation model** and perform initial experiments on the MovieLens dataset.
+---
+
+## Model
+We implement a standard latent-factor collaborative filtering model with user and item biases:
+
+\[
+\hat r_{ui} = \mu + b_u + b_i + p_u^\top q_i
+\]
+
+where:
+
+- \(\mu\) = global mean rating  
+- \(b_u\) = user bias  
+- \(b_i\) = item bias  
+- \(p_u\) = latent vector for user \(u\)  
+- \(q_i\) = latent vector for item \(i\)  
+
+The model is trained using **stochastic gradient descent (SGD)** with **L2 regularization**.
+
+---
