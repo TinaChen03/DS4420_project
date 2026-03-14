@@ -6,6 +6,10 @@ This project is a proof-of-concept implementation of a recommendation system usi
 For Phase I, this repository focuses on the **first non-Bayesian model**: a manual matrix factorization baseline implemented in **Python + NumPy**.
 
 ---
+## Team Members
+- Yujie Chen
+- Xinwen Zhang
+- Zehao Shi
 
 ## Dataset
 We use the MovieLens 1M-style data files:
@@ -27,6 +31,9 @@ In our current run:
 ---
 
 ## Model
+1. **Matrix Factorization (SVD)**  
+2. **Neural Collaborative Filtering (Neural CF)**  
+3. **Bayesian Probabilistic Matrix Factorization (Bayesian PMF)**
 We implement a standard latent-factor collaborative filtering model with user and item biases:
 
 \[
