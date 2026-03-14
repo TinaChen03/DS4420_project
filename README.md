@@ -34,6 +34,7 @@ In our current run:
 1. **Matrix Factorization (SVD)**  
 2. **Neural Collaborative Filtering (Neural CF)**  
 3. **Bayesian Probabilistic Matrix Factorization (Bayesian PMF)**
+
 We implement a standard latent-factor collaborative filtering model with user and item biases:
 
 \[
